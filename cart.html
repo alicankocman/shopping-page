@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+     .cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.cart-item {
+    width: 200px; 
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+border-color: #000000; ;
+}
+.shopping-card{
+    text-align: center;
+    color: #000000;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+        .cart-item h3 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .cart-item p {
+            color: green;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+}
+    </style>
+
+</head>
+<body>
+    <h1 class="shopping-card">Shopping Cart</h1>
+    <div class="cart-content">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartContent = document.querySelector('.cart-content');
+            const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+            if (cartItems && cartItems.length > 0) {
+                cartItems.forEach(item => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('cart-item');
+                    productElement.innerHTML = `
+                        <h3>${item.title}</h3>
+                        <img src="${item.image}" alt="${item.title}" width="100">
+                        <p>${item.price}</p>
+                    `;
+                    cartContent.appendChild(productElement);
+                });
+            } else {
+                cartContent.innerHTML = '<p>Sepetinizde ürün bulunmamaktadır.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

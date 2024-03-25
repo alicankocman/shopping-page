@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            border-right-color: #000000;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+
+
+        }
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: green;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+border-color: #000000;
+        }
+
+        .product-description {
+            margin-bottom: 10px;
+        }
+
+        .cart-icon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 14px;
+        }
+       .add-to-cart-button {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .title-shopping{
+            text-align: center;
+            font-size: 50px;
+            color: #000000;
+            margin-top: 5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <h1 class="title-shopping">Shopping Page</h1>
+    <div class="product">
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+            <span id="item-count-info"></span>
+            <title>Cart Page</title>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/200" alt="Product 1">
+            <h2 class="product-title">Product 1</h2>
+            <p class="product-price">$19.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/200">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/300" alt="Product 2">
+            <h2 class="product-title">Product 2</h2>
+            <p class="product-price">$24.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/300">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/400" alt="Product 3">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$29.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/400">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/500" alt="Product 4">
+            <h2 class="product-title">Product 4</h2>
+            <p class="product-price">$34.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/500">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/600" alt="Product 5">
+            <h2 class="product-title">Product 5</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/600">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/700" alt="Product 6">
+            <h2 class="product-title">Product 6</h2>
+            <p class="product-price">$44.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/700">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/800" alt="Product 1">
+            <h2 class="product-title">Product 1</h2>
+            <p class="product-price">$19.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/800">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/900" alt="Product 2">
+            <h2 class="product-title">Product 2</h2>
+            <p class="product-price">$24.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/900">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/1000" alt="Product 3">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$29.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/1000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/1100" alt="Product 4">
+            <h2 class="product-title">Product 4</h2>
+            <p class="product-price">$34.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/1100">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/1200" alt="Product 5">
+            <h2 class="product-title">Product 5</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/1200">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://picsum.photos/1300" alt="Product 6">
+            <h2 class="product-title">Product 6</h2>
+            <p class="product-price">$44.99</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button" data-image="https://picsum.photos/1300">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartCount = document.querySelector('.cart-count');
+            let itemCount = 0;
+            const productList = [];
+
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    itemCount++;
+                    cartCount.textContent = itemCount;
+
+                    const productCard = button.parentElement;
+                    const productTitle = productCard.querySelector('.product-title').textContent;
+                    const productPrice = productCard.querySelector('.product-price').textContent;
+                    const productImage = button.getAttribute('data-image');
+
+                    const product = { title: productTitle, price: productPrice, image: productImage };
+                    productList.push(product);
+
+                    localStorage.setItem('cartItems', JSON.stringify(productList));
+                });
+            });
+
+            cartIcon.addEventListener('click', () => {
+                window.location.href = 'cart.html';
+            });
+        });
+    </script>
+</body>
+</html>
